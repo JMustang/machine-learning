@@ -11,6 +11,17 @@ target = "classe"
 x = df[features]
 y = df[target]
 
+x = x.replace(
+    {
+        "mud": 1,
+        "pint": 2,
+        "sim": 1,
+        "não": 0,
+        "clara": 0,
+        "escura": 1,
+    }
+)
+x
 # %%
 from sklearn import tree
 

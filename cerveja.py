@@ -29,3 +29,11 @@ model = tree.DecisionTreeClassifier()
 
 model.fit(x, y)
 # %%
+
+import matplotlib.pyplot as plt
+
+plt.figure(dpi=400)
+
+tree.plot_tree(model, feature_names=features, class_names=model.classes_, filled=True)
+
+# %%

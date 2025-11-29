@@ -6,6 +6,7 @@ scikit-learn==1.7.2
 streamlit==1.51.0
 matplotlib==3.10.7
 ipykernel==7.1.0
+openpyxl==3.1.5
 
 # Optional/extra - install only when needed or if working with parquet/arrow data:
 pyarrow==21.0.0

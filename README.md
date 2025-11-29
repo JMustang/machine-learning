@@ -157,4 +157,44 @@ pip install pyarrow
 ## ✅ Notas finais
 
 - O projeto é intencionalmente simples para demonstrar um fluxo de ML com poucas linhas.
-- Recomendo manter as colunas normalizadas (sem acentos) para evitar problemas em código e integração com bibliotecas externas.
+-- Recomendo manter as colunas normalizadas (sem acentos) para evitar problemas em código e integração com bibliotecas externas.
+
+---
+
+## 🍺 `cerveja.py` — Classificação de cerveja (Decision Tree)
+
+`cerveja.py` é um script de exemplo para treinar um classificador (Decision Tree) que prevê a classe de uma cerveja com base em características simples.
+
+O script espera um arquivo Excel com o caminho `data/dados_cerveja.xlsx` e as colunas a seguir:
+
+- `temperatura` — temperatura (numérico ou categorias)
+- `copo` — tipo de copo (ex.: `mud`, `pint`)
+- `espuma` — presença de espuma (`sim`/`não`)
+- `cor` — cor do líquido (`clara`/`escura`)
+- `classe` — rótulo alvo (classe a ser prevista)
+
+Processamento:
+
+- O script carrega os dados com `pd.read_excel`.
+- Substitui valores categóricos por inteiros usando `df.replace` (por exemplo: `sim` -> 1, `não` -> 0, `clara` -> 0, `escura` -> 1, `pint` -> 2, etc.).
+- Treina um `DecisionTreeClassifier` de `sklearn` e plota a árvore com `matplotlib`.
+
+Como executar:
+
+- Em Jupyter: execute as células (o gráfico aparecerá embutido).
+- Em script: adicione `plt.show()` no final do arquivo para exibir o plot quando rodar `python cerveja.py`.
+
+Dependências necessárias:
+
+- pandas
+- scikit-learn
+- matplotlib
+- openpyxl (lê arquivos xlsx)
+
+Observações e melhorias possíveis:
+
+- Ajuste o mapeamento de categorias em `x.replace(...)` conforme os valores reais do seu Excel.
+- O script atualmente foi feito para uso interativo (Jupyter / interactive mode). Se quiser, posso:
+  - Atualizar `cerveja.py` para executar corretamente como script (incluir `if __name__ == '__main__':` e `plt.show()`),
+  - Validar colunas e apresentar mensagens de erro mais explícitas, ou
+  - Salvar a figura da árvore em PNG em vez de exibir.

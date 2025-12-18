@@ -156,10 +156,12 @@ pip install pyarrow
 
 ## ✅ Notas finais
 
-- O projeto é intencionalmente simples para demonstrar um fluxo de ML com poucas linhas.
--- Recomendo manter as colunas normalizadas (sem acentos) para evitar problemas em código e integração com bibliotecas externas.
+## 🆕 Novidades (2025-12-17)
 
----
+- **Novo:** adicionei o script `cerveja.py` — um exemplo simples de classificação (Decision Tree) para demonstrar processamento de dados categóricos e visualização da árvore.
+- **Ajuste importante:** lembrete para ajustar o mapeamento de categorias em `x.replace(...)` conforme os valores reais do seu Excel (veja a nota no corpo do README).
+- **Execução:** se preferir executar `cerveja.py` como script, posso atualizar o arquivo para incluir `if __name__ == '__main__':` e `plt.show()` para exibir ou salvar a figura automaticamente.
+- **Outros arquivos:** há exemplos auxiliares no repositório (por exemplo `frutas.py` e `star_wars.py`) — avise se quiser que eu documente ou padronize eles também.
 
 ## 🍺 `cerveja.py` — Classificação de cerveja (Decision Tree)
 
